@@ -1,0 +1,30 @@
+{
+    "python.defaultInterpreterPath": "${workspaceFolder}\\.venv\\Scripts\\python.exe",
+    "python.analysis.typeCheckingMode": "off",
+    "python.analysis.diagnosticMode": "openFilesOnly",
+    "python.testing.pytestEnabled": true,
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestArgs": [
+        "tests"
+    ],
+    "editor.formatOnSave": true,
+    "editor.rulers": [
+        120
+    ],
+    // Auto-save whenever focus changes or after a delay
+    "files.autoSave": "onFocusChange",
+    "files.autoSaveDelay": 1000,
+    // For Code Runner extension: save all files before running
+    "code-runner.saveFileBeforeRun": true,
+    // Save all files before debugging / running via built-in Run & Debug
+    "debug.saveBeforeStart": "allEditorsInActiveGroup",
+    "mypy.enabled": false,
+    "[python]": {
+        "editor.defaultFormatter": "charliermarsh.ruff",
+        "editor.codeActionsOnSave": {
+            "source.fixAll.ruff": "always",
+            "source.organizeImports.ruff": "explicit"
+        }
+    },
+    "ruff.organizeImports": true,
+}

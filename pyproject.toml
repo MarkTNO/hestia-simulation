@@ -1,0 +1,60 @@
+[project]
+name = "hestia-simulation"
+dynamic = ["version"]
+description = "A minimal PyPI-ready package scaffold for hestia simulation."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [
+  { name = "Mark Vrijlandt", email = "mark.vrijlandt@tno.nl" },
+  { name = "Jane Doe", email = "jane.doe@tno.nl" },
+]
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/your-org/hestia-simulation"
+Repository = "https://github.com/your-org/hestia-simulation"
+Issues = "https://github.com/your-org/hestia-simulation/issues"
+
+
+[dependency-groups]
+dev = ["pytest>=8.3.0", "ruff>=0.6.0", "ty>=0.0.1a14"]
+
+[build-system]
+requires = ["hatchling>=1.25.0", "hatch-vcs"]
+build-backend = "hatchling.build"
+
+[tool.uv]
+package = true
+
+[tool.hatch.version]
+source = "vcs"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/hestia_simulation"]
+
+[tool.ruff]
+line-length = 120
+
+[tool.ruff.lint]
+select = [
+  "E",   # pycodestyle
+  "W",
+  "F",   # Pyflakes
+  "UP",  # pyupgrade
+  "B",   # flake8-bugbear
+  "SIM", # flake8-simplify
+  "I",   # isort
+  "D",   # pydocstyle
+]
+ignore = [
+  "D100", # Missing docstring in public module
+  "D211", # no-blank-line-before-class
+  "D213", # multi-line-summary-second-line
+  "D203", # 1 blank line required before class docstring
+]
+
+[tool.pytest.ini_options]
+addopts = "-q"
+testpaths = ["tests"]
+pythonpath = ["src"]
