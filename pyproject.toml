@@ -35,6 +35,7 @@ packages = ["src/hestia_simulation"]
 
 [tool.ruff]
 line-length = 120
+preview = true
 
 [tool.ruff.lint]
 select = [
@@ -46,6 +47,8 @@ select = [
   "SIM", # flake8-simplify
   "I",   # isort
   "D",   # pydocstyle
+  "ANN", # flake8-annotations
+  "DOC", # flake8-docstrings
 ]
 ignore = [
   "D100", # Missing docstring in public module
